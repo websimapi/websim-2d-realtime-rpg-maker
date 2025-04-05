@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Realtime RPG Maker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/leader-line-new@1.1.9/leader-line.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="toolbar">
+            <button id="play-mode-toggle">Play Mode</button>
+            <div id="texture-selector">
+                <h3>Texture Tiles</h3>
+                <div id="texture-gallery"></div>
+                <div id="generate-texture">
+                    <input type="text" id="texture-prompt" placeholder="Describe a texture...">
+                    <button id="generate-texture-btn">Generate</button>
+                </div>
+            </div>
+            <div id="tile-properties">
+                <h3>Tile Properties</h3>
+                <label><input type="checkbox" id="is-walkable"> Walkable</label>
+                <label><input type="checkbox" id="is-teleport"> Teleport</label>
+                <div id="teleport-target" style="display: none;">
+                    <label>Target X: <input type="number" id="teleport-x"></label>
+                    <label>Target Y: <input type="number" id="teleport-y"></label>
+                </div>
+            </div>
+             <div id="layer-selector">
+                <h3>Layer</h3>
+                <select id="current-layer">
+                    <option value="0">Layer 0 (Base)</option>
+                    <option value="1">Layer 1</option>
+                    <option value="2">Layer 2</option>
+                </select>
+            </div>
+        </div>
+        <div id="game-world">
+            <canvas id="game-canvas"></canvas>
+            <div id="player-container"></div>
+        </div>
+    </div>
+    <script type="importmap">
+    {
+      "imports": {
+        "leader-line": "https://cdn.jsdelivr.net/npm/leader-line-new@1.1.9/leader-line.min.js"
+      }
+    }
+    </script>
+    <script type="module" src="script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
