@@ -1,5 +1,3 @@
-import 'leader-line'; // Make LeaderLine available globally if needed, though we might not use it here initially
-
 const room = new WebsimSocket();
 
 // --- DOM Elements ---
@@ -696,4 +694,3 @@ function updatePlayerElements() {
 
 // --- Start the application ---
 initialize();
-
