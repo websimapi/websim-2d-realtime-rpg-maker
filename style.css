@@ -111,54 +111,61 @@ body {
     flex-grow: 1;
     position: relative;
     overflow: hidden;
-    background-color: #ddd; /* Placeholder background */
+    background-color: #333; 
 }
 
 #game-canvas {
     display: block;
     width: 100%;
     height: 100%;
-    cursor: pointer;
+    /* cursor is set dynamically by JS */
 }
 
 #player-container {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100%; 
     height: 100%;
-    pointer-events: none; /* Allow clicking through to the canvas */
+    pointer-events: none; 
+    overflow: visible; 
 }
 
 .player {
     position: absolute;
-    width: 32px; /* Example size */
+    top: 0; 
+    left: 0;
+    transform: translate(-9999px, -9999px); 
+    width: 32px;
     height: 32px;
-    border-radius: 50%;
-    background-color: red; /* Placeholder color */
+    border-radius: 4px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: left 0.1s linear, top 0.1s linear;
+    transition: transform 0.1s linear; 
+    z-index: 10; 
+    will-change: transform; 
+    overflow: hidden; 
 }
 
 .player img {
-    width: 80%;
-    height: 80%;
-    border-radius: 50%;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
 }
 
 .player-name {
     position: absolute;
-    bottom: -20px;
+    bottom: -20px; 
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 2px 5px;
     border-radius: 3px;
-    font-size: 12px;
+    font-size: 10px; 
     white-space: nowrap;
+    z-index: 11; 
 }
 
 #play-mode-toggle {
@@ -173,4 +180,3 @@ body {
 #play-mode-toggle.play-mode-active {
     background-color: #dc3545;
 }
-
